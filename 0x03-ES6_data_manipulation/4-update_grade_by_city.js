@@ -1,13 +1,22 @@
-const updateStudentGradeByCity = (student, city, score) => {
-    const studentDetails = new Map(student, score);
-	if (!studentDetails.grade){
- 	     const listedDetails = studentDetails.filter((data) => data.location === city )
-	     return listedDetails;
-	}
-	else{
-		const listedDetails = studentDetails.filter((data) => data.location === city)
-		return listedDetails.push("grade", 'N/A')
-	}
+// Grade by city with new grade
 
-}
-export default updateStudentGradeByCity;
+const updateStudentGradeByCity = (students, city, newGrades) => {
+  if (!Array.isArray(students) || !Array.isArray(newGrades)) {
+    return [];
+  }
+
+  const studentByCity = students
+    .filter((student) => student.location === city)
+    .map((student) => {
+      const grades = newGrades.filter((note) => student.id === note.studentId);
+      let grade = 'N/A';
+
+      if (grades[0]) {
+        grade = grades[0].grade;
+      }
+
+      return { ...student, grade };
+    });
+
+  return studentByCity;
+};

@@ -1,13 +1,13 @@
 const fs = require('fs')
 
 function countStudents(path){
-    return new promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         fs.readFile(path, 'utf8', (err, data) => {
             if (err) {
-                reject('Cannot load the database')
+               throw Error('Cannot load the database');
             } else {
                 const lines = data.trim().split('\n')
-                const numberofStudents = lines.lenght -1 
+                const numberofStudents = lines.length - 1
                 console.log(`Number of students: ${numberofStudents}`)
                 let field1 = 0;
                 let field2 = 0;

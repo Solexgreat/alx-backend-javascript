@@ -17,7 +17,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['jest'],
-  rules: {
+  rules: {OA
     'max-classes-per-file': 'off',
     'no-underscore-dangle': 'off',
     'no-console': 'off',

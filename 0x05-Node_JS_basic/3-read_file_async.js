@@ -25,8 +25,8 @@ function countStudents(path){
                         }
                     }
                 }
-                console.log(`Number of students in CS: ${field1}. List: ${listOfFirstNameF1}`);
-                console.log(`Number of students in SWE: ${field2}. List: ${listOfFirstNameF2}`);
+                console.log(`Number of students in CS: ${field1}. List: ${CSlist}`);
+                console.log(`Number of students in SWE: ${field2}. List: ${SWElist}`);
                 return(numberofStudents, CSlist, SWElist);
             }
 

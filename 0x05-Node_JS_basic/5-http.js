@@ -8,7 +8,7 @@ const app = http.createServer(async (req, res) => {
     res.writeHead(200,{'content-Type': 'text/plain'});
 
     if (req.url === '/' ) {
-        res.end('Hello Holberton School!')
+        res.end('Hello Holberton School!');
     } else if (req.url === '/students') {
         res.write('This is the list of our students')
         students(process.argv[2]).then((data) => {
